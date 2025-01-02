@@ -1,1 +1,3 @@
-document.getElementById("message").innerText = "Didko ...!";
+"use strict";
+
+document.getElementById("message").innerText = "Didko ";
