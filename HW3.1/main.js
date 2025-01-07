@@ -1,5 +1,6 @@
 // "use strict";
 
+<<<<<<< HEAD
 // let num = 10;
 // console.log(num);
 // console.log(typeof num);
@@ -48,6 +49,8 @@
 // console.log(num);
 // console.log(typeof num);
 
+=======
+>>>>>>> c893e43e7066e48a51796da4c451a9d8993536c1
 // console.log(typeof 15);
 // console.log(typeof "15");
 // console.log(typeof NaN);
