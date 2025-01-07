@@ -7,17 +7,45 @@
     <script defer src="main.js"></script>
   </head>
   <body>
-    <form action="">
-      <label>Введіть число яке більше від попереднього на 133: </label>
-      <input
-        type="number"
-        name="userNum"
-        placeholder="введіть п'ятизначне число кратне 133"
-        min="1"
-        max="99999"
-        step="133"
-      />
-      <button type="submit">Відправити</button>
-    </form>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis veritatis
+      impedit ipsam enim. Pariatur deleniti quis dolor adipisci illo facere
+      blanditiis, animi nemo eveniet voluptas facilis reprehenderit qui error
+      similique!
+    </p>
+    <script>
+      const num = 10;
+      console.log(num);
+      console.log(typeof num);
+      const str = "10";
+      console.log(str);
+      console.log(typeof str);
+      const boll = 10 > 0;
+      console.log(boll);
+      console.log(typeof boll);
+      const notNum = null;
+      console.log(notNum);
+      console.log(typeof notNum);
+      let variant;
+      console.log(variant);
+      console.log(typeof variant);
+      const bigNum = 99n;
+      console.log(bigNum);
+      console.log(typeof bigNum);
+      const symb = Symbol("var_s");
+      console.log(symb);
+      console.log(typeof symb);
+      const oObj1 = { name: "Andrij", age: 30 };
+      console.log(oObj1);
+      console.log(typeof oObj1);
+      const arrObj2 = [10, 233, 25, 12, 2, 11];
+      console.log(arrObj2);
+      console.log(typeof arrObj2);
+      function num1(num) {
+        console.log("Я взяв " + num + "!");
+      }
+      num1(10);
+      console.log(typeof num1);
+    </script>
   </body>
 </html>
