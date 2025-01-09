@@ -2,7 +2,6 @@
 
 let numOrStr = prompt("input number or string");
 // console.log(numOrStr);
-let message;
 
 // if (numOrStr === null) {
 //   console.log("ви скасували");
