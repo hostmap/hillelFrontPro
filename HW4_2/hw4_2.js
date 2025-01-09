@@ -1,7 +1,12 @@
 "use strict";
 
 const num = prompt("Введіть тризначне число");
+
 function checkNum(num) {
+  if (num < 100 || num > 999) {
+    console.log("Число треба написати тризначне");
+  }
+
   const hundrs = Math.floor(num / 100);
   const tens = Math.floor((num % 100) / 10);
   const singles = num % 10;
