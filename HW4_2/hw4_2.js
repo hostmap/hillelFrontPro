@@ -3,8 +3,9 @@
 const num = prompt("Введіть тризначне число");
 
 function checkNum(num) {
-  if (num < 100 || num > 999) {
+  if (isNaN(num) || num < 100 || num > 999) {
     console.log("Число треба написати тризначне");
+    return;
   }
 
   const hundrs = Math.floor(num / 100);
