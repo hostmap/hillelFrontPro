@@ -30,4 +30,4 @@ function checkNum(num) {
   }
 }
 
-console.log(checkNum(num));
+checkNum(num);
