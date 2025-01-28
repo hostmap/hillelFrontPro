@@ -20,7 +20,7 @@ function informUser() {
   }
   cityUser = cityUser.trim();
 
-  let sportUser = prompt("What is your favorite sport?");
+  let sportUser = prompt("write one of the three sports that you like: chess, volleyball, football");
   if (sportUser === null) {
     alert("There are no data");
     return;
