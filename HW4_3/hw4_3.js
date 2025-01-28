@@ -3,14 +3,15 @@
 alert("All data is entered in English using the British keyboard layout.");
 
 function informUser() {
-  let yearUser = prompt(
-    "Please enter your year of birth in numbers (the number must be in four digits)"
+  let yearUser = Number(
+    prompt(
+      "Please enter your year of birth in numbers (the number must be in four digits)"
+    )
   );
   if (yearUser === null) {
     alert("There are no data");
     return;
   }
-  yearUser = Number(yearUser);
 
   let cityUser = prompt("What city do you live in?");
   if (cityUser === null) {
