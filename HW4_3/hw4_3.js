@@ -66,6 +66,8 @@ function informUser() {
     sportMessage = `Cool! Do you want to become ${
       sportChampion[sportUser.toLowerCase()]
     }?`;
+  } else {
+    sportMessage = `You deserve a sport ${sportUser} `
   }
 
   const message = `Your age: ${age}\n${cityMessage}\n${sportMessage}`;
