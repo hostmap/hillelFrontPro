@@ -4,4 +4,4 @@ const nameIs = (a) => (b) => {
   return a * b;
 };
 
-nameIs(2)(3);
+nameIs(5)(2);
