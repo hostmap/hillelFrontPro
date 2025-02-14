@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  /* Apply alternating background colors to data cells (td) only, excluding first row and first column */
+  tbody tr:not(:first-child):nth-child(even) td:not(:first-child):nth-child(odd),
+  tbody tr:not(:first-child):nth-child(odd) td:not(:first-child):nth-child(even) {
+    background-color: red;
+  }
+  
+  tbody tr:not(:first-child):nth-child(even) td:not(:first-child):nth-child(even),
+  tbody tr:not(:first-child):nth-child(odd) td:not(:first-child):nth-child(odd) {
+    background-color: yellow;
+  }
