@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Save Tabs URLs",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "tabs",
+      "downloads",
+      "scripting",
+      "*://*.tripoli.land/*",
+      "*://*.googleusercontent.com/*",
+      "*://*.docs.google.com/*",
+      "*://*.gemini.google.com/*",
+      "*://*.javascript.info/*",
+      "*://*.google.com/*",
+      "*://*.pcprogs.net/*",
+      "*://*.nnmclub.to/*",
+      "*://*.slavhorodskaschool.e-schools.info/*"
+    ]
+  }
