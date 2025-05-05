@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Контактна книга</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .contact {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Контактна книга</h1>
+    <button onclick="addContactUI()">Додати контакт</button>
+    <button onclick="searchContactUI()">Пошук контакту</button>
+    <div id="contacts"></div>
+
+    <script>
+        const contactBook = {
+            contacts: [
+                {
+                    fullName: "Іваненко Петро Олексійович",
+                    phone: "+380991234567",
+                    email: "petro@example.com",
+                    location: "Київ",
+                    notes: "Колега по роботі"
+                }
+            ],
+
+            searchByName: function(name) {
+                return this.contacts.filter(contact => 
+                    contact.fullName.toLowerCase().includes(name.toLowerCase())
+                );
+            },
+
+            addContact: function(contact) {
+                this.contacts.push(contact);
+            }
+        };
+
+        function displayContacts(contactsArray) {
+            const container = document.getElementById('contacts');
+            container.innerHTML = '';
+            
+            contactsArray.forEach(contact => {
+                const [surname, name, patronymic] = contact.fullName.split(' ');
+                const contactHTML = `
+                    <div class="contact">
+                        <h3>${surname} ${name} ${patronymic}</h3>
+                        <p><strong>Місце знаходження:</strong> ${contact.location}</p>
+                        <p><strong>Телефон:</strong> ${contact.phone}</p>
+                        <p><strong>Email:</strong> ${contact.email}</p>
+                        <p><strong>Примітки:</strong> ${contact.notes}</p>
+                    </div>
+                `;
+                container.innerHTML += contactHTML;
+            });
+        }
+
+        function addContactUI() {
+            const fullName = prompt("Введіть ПІБ (прізвище ім'я по батькові):");
+            const phone = prompt("Введіть номер телефону:");
+            const email = prompt("Введіть email:");
+            const location = prompt("Введіть місце знаходження:");
+            const notes = prompt("Введіть примітки:");
+
+            const newContact = {
+                fullName,
+                phone,
+                email,
+                location,
+                notes
+            };
+
+            contactBook.addContact(newContact);
+            displayContacts(contactBook.contacts);
+        }
+
+        function searchContactUI() {
+            const searchTerm = prompt("Введіть ім'я або прізвище для пошуку:");
+            const results = contactBook.searchByName(searchTerm);
+            displayContacts(results);
+        }
+
+        // Початковий вивід контактів
+        displayContacts(contactBook.contacts);
+    </script>
+</body>
+</html>

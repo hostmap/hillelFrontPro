@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW10_3</title>
+    <script defer src="hw10_3.js"></script>
+    <link rel="stylesheet" href="hw10_3.css">
+</head>
+<body>
+    <h1>Phone book</h1>
+
+    <div class="search-box">
+        <h2>Пошук контактів</h2>
+        <input type="text" id="searchInput" placeholder="Введіть ім'я">
+        <div class="search-result" id="searchResult"></div>
+    </div>
+
+    <div class="add-form">
+        <h2>Додати новий контакт</h2>
+        <input type="text" id="nameInput" placeholder="Ім'я">
+        <input type="tel" id="phoneInput" placeholder="Телефон">
+        <input type="email" id="emailInput" placeholder="Email">
+        <button onclick="addNewContact()">Додати</button>
+    </div>
+
+    <div id="contactsList"></div>
+</body>
+</html>

@@ -13,6 +13,7 @@
 // const fruit = ["zarra", "banana", "apple"];
 
 // console.log(fruit.pull(2));
-const scores = [10, 8, 7, 12, 2, 65];
-const goodScores = scores.filter((score) => score > 8);
-console.log(goodScores);
+// const scores = [10, 8, 7, 12, 2, 65];
+// const goodScores = scores.filter((score) => score > 8);
+// console.log(goodScores);
+console.log(require('crypto').constants);
