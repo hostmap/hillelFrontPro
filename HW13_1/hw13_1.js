@@ -1,51 +1,70 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    let isValid = true;
+'use strict';
 
-    // Name validation
-    const name = document.getElementById('name').value;
-    if (name === '') {
-        isValid = false;
-        document.getElementById('nameError').textContent = 'Name is required.';
-    } else {
-        document.getElementById('nameError').textContent = '';
-    }
+const form = document.getElementById('contactForm');
+        const nameInput = document.getElementById('name');
+        const messageInput = document.getElementById('message');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
 
-    // Message validation
-    const message = document.getElementById('message').value;
-    if (message.length < 5) {
-        isValid = false;
-        document.getElementById('messageError').textContent = 'Message must be at least 5 characters long.';
-    } else {
-        document.getElementById('messageError').textContent = '';
-    }
+        const validateField = (regex, input, errorElement, message) => {
+            const value = input.type === 'tel' ? input.value : input.value.trim();
+            const isValid = regex.test(value);
+            
+            if (!isValid) {
+                input.classList.add('input-error');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            } else {
+                input.classList.remove('input-error');
+                errorElement.style.display = 'none';
+            }
+            return isValid;
+        };
 
-    // Phone number validation
-    const phone = document.getElementById('phone').value;
-    const phoneRegex = /^\+380\d{9}$/;
-    if (!phoneRegex.test(phone)) {
-        isValid = false;
-        document.getElementById('phoneError').textContent = 'Phone number must start with +380 and be followed by 9 digits.';
-    } else {
-        document.getElementById('phoneError').textContent = '';
-    }
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isFormValid = true;
 
-    // Email validation
-    const email = document.getElementById('email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        isValid = false;
-        document.getElementById('emailError').textContent = 'Invalid email address.';
-    } else {
-        document.getElementById('emailError').textContent = '';
-    }
+            const nameValid = validateField(
+                /^[A-Za-zА-Яа-яҐґЄєІіЇї\s']+$/,
+                nameInput,
+                document.getElementById('nameError'),
+                'Please enter a valid name'
+            );
+            isFormValid = nameValid && isFormValid;
 
-    // If form is valid, log the data to console
-    if (isValid) {
-        console.log('Name:', name);
-        console.log('Message:', message);
-        console.log('Phone:', phone);
-        console.log('Email:', email);
-    }
-});
+            const messageValid = validateField(
+                /^(|\S.{4,})$/,
+                messageInput,
+                document.getElementById('messageError'),
+                'Message must be at least 5 characters'
+            );
+            isFormValid = messageValid && isFormValid;
+
+            const phoneValid = validateField(
+                /^\+380\d{9}$/,
+                phoneInput,
+                document.getElementById('phoneError'),
+                'Invalid phone format (+380XXXXXXXXX)'
+            );
+            isFormValid = phoneValid && isFormValid;
+
+            const emailValid = validateField(
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                emailInput,
+                document.getElementById('emailError'),
+                'Please enter a valid email'
+            );
+            isFormValid = emailValid && isFormValid;
+
+            if (isFormValid) {
+                const formData = {
+                    name: nameInput.value.trim(),
+                    message: messageInput.value.trim(),
+                    phone: phoneInput.value,
+                    email: emailInput.value.trim()
+                };
+                console.log('Form Data:', formData);
+                form.reset();
+            }
+        });
