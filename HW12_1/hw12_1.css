@@ -1,0 +1,23 @@
+.container {
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #f8f9fa;
+}
+.btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn:hover {
+    background-color: #2980b9;
+}
+.btn:active {
+    background-color: #1c598a;
+}

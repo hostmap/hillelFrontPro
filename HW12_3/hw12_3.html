@@ -1,41 +1,15 @@
 <!DOCTYPE html>
-<html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Список завдань</title>
-    <script defer src="hw12_3.js"></script>
-    <link rel="stylesheet" href="hw12_3.css" />
-  </head>
-  <body>
-    <h1>Мій список завдань</h1>
-    <div class="controls">
-      <input
-        type="text"
-        id="taskInput"
-        placeholder="Нове завдання"
-        style="flex-grow: 1; padding: 8px"
-      />
-      <button id="addTaskBtn" class="add-btn">Додати</button>
-    </div>
-
-    <ul id="taskList"></ul>
-
-    <div style="margin-top: 20px">
-      <button id="sendEmailBtn" class="send-btn">Надіслати вибрані</button>
-      <button id="clearAllBtn" class="clear-btn">Очистити весь список</button>
-    </div>
-
-    <!-- Попередня розмітка залишається незмінною -->
-    <div id="emailModal" class="modal">
-      <div class="modal-content">
-        <h3>Попередній перегляд та редагування</h3>
-        <div id="previewContent"></div>
-        <div class="provider-buttons">
-          <button onclick="sendEmail('gmail')">Надіслати через Gmail</button>
-          <button onclick="sendEmail('ukrnet')">Надіслати через UKR.NET</button>
-          <button onclick="closeModal()">Скасувати</button>
-        </div>
-      </div>
-    </div>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW 12-3</title>
+  <link rel="stylesheet" href="hw12_3.css">
+  <script src="hw12_3.js" defer></script>
+</head>
+<body>
+  <ul id="taskList"></ul>
+    <input type="text" id="taskInput" placeholder="Введіть нове завдання...">
+    <button id="addTask">Додати</button>
+</body>
 </html>
